@@ -36,7 +36,6 @@ app.post("/weather", async (req, res) => {
 
   try {
     const result = await axios.get(apiUrl);
-    console.log(result.data);
     // Pass the weather data to the view
     res.render("index", {
       city: result.data.name,
