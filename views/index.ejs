@@ -12,7 +12,9 @@
       }
     </style>
   </head>
-  <body class="bg-[#072521]">
+  <body
+    class="<% let bgImageMap = { "Clear": "/images/bgclear.png", "Clouds": "/images/bgclouds.png", "Drizzle": "/images/bgdrizzle.png", "Mist": "/images/bgmist.png", "Rain": "/images/bgrain.png", "Snow": "/images/bgsnow.png", "Smoke": "/images/bgsmoke.png", "Haze": "/images/bghaze.png" }; let bgImage = bgImageMap[weather] || "/images/clear.png"; %> bg-[url('<%= bgImage %>')] bg-cover bg-center h-screen"
+  >
     <div
       class="w-full max-w-md mx-auto mt-24 p-4 bg-gradient-to-br from-[#f50000] to-[#ff00fb] text-white rounded-2xl flex flex-col items-center"
     >
@@ -29,7 +31,6 @@
           class="border-0 outline-none bg-[#ebfffc] text-[#555] py-3 px-5 h-12 rounded-full flex-1 text-md md:w-1/2 lg:w-1/3"
           required
         />
-
         <button
           type="submit"
           class="ml-4 border-0 outline-none bg-[#ebfffc] rounded-full w-12 h-12 flex items-center justify-center cursor-pointer"
@@ -47,10 +48,9 @@
       <div class="weather flex flex-col items-center font-bold">
         <% let weatherImageMap = { "Clear": "/images/clear.png", "Clouds":
         "/images/clouds.png", "Drizzle": "/images/drizzle.png", "Mist":
-        "/images/mist.png", "Rain": "/images/rain.png" ,"Snow":
-        "/images/snow.png", "Smoke": "/images/co2.png",
-        "Haze":"/images/fog.png"}; let imageSrc = weatherImageMap[weather] ||
-        "/images/empty.png"; %>
+        "/images/mist.png", "Rain": "/images/rain.png", "Snow":
+        "/images/snow.png", "Smoke": "/images/co2.png", "Haze":"/images/fog.png"
+        }; let imageSrc = weatherImageMap[weather] || "/images/empty.png"; %>
         <img
           src="<%= imageSrc %>"
           alt="<%= weather || 'Unknown' %>"
