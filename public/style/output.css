@@ -619,10 +619,6 @@ video {
   height: 1.5rem;
 }
 
-.h-screen {
-  height: 100vh;
-}
-
 .w-10 {
   width: 2.5rem;
 }
@@ -696,6 +692,11 @@ video {
   background-color: rgb(235 255 252 / var(--tw-bg-opacity));
 }
 
+.bg-zinc-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(24 24 27 / var(--tw-bg-opacity));
+}
+
 .bg-gradient-to-br {
   background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
 }
@@ -708,14 +709,6 @@ video {
 
 .to-\[\#ff00fb\] {
   --tw-gradient-to: #ff00fb var(--tw-gradient-to-position);
-}
-
-.bg-cover {
-  background-size: cover;
-}
-
-.bg-center {
-  background-position: center;
 }
 
 .p-4 {
