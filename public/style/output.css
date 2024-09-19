@@ -824,6 +824,12 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.shadow-\[14px_14px_14px_rgba\(0\2c 0\2c 0\2c 0\.1\)_inset\2c -20px_-20px_20px_rgba\(255\2c 255\2c 255\2c 0\.6\)_inset\] {
+  --tw-shadow: 14px 14px 14px rgba(0,0,0,0.1) inset,-20px -20px 20px rgba(255,255,255,0.6) inset;
+  --tw-shadow-colored: inset 14px 14px 14px var(--tw-shadow-color), inset -20px -20px 20px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .outline-none {
   outline: 2px solid transparent;
   outline-offset: 2px;
