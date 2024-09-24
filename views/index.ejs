@@ -13,7 +13,7 @@
     </style>
   </head>
   <body
-    class="<% if (weather == 'Clear') { %> bg-[url('/images/bgclear.png')] <% } else if (weather == 'Clouds') { %> bg-[url('/images/bgclouds.png')] <% } else if (weather == 'Drizzle') { %> bg-[url('/images/bgdrizzle.png')] <% } else if (weather == 'Haze') { %> bg-[url('/images/bghaze.png')] <% } else if (weather == 'Mist') { %> bg-[url('/images/bgmist.png')] <% } else if (weather == 'Smoke') { %> bg-[url('/images/bgsmoke.png')] <% } else if (weather == 'Rain') { %> bg-[url('/images/bgrain.png')] <% } else if (weather == 'Snow') { %> bg-[url('/images/bgsnow.png')] <% } else { %> bg-[#00000] <% } %> bg-cover bg-center h-screen"
+    class="<% if (weather == 'Clear') { %> bg-[url('/images/bgclear.png')] <% } else if (weather == 'Clouds') { %> bg-[url('/images/bgclouds.png')] <% } else if (weather == 'Drizzle') { %> bg-[url('/images/bgdrizzle.png')] <% } else if (weather == 'Haze') { %> bg-[url('/images/bghaze.png')] <% } else if (weather == 'Mist') { %> bg-[url('/images/bgmist.png')] <% } else if (weather == 'Smoke') { %> bg-[url('/images/bgsmoke.png')] <% } else if (weather == 'Rain') { %> bg-[url('/images/bgrain.png')] <% } else if (weather == 'Snow') { %> bg-[url('/images/bgsnow.png')] <% } else if (weather == 'Thunderstorm') { %> bg-[url('/images/bgthunder.png')] <% } else { %> bg-[#00000] <% } %> bg-cover bg-center h-screen"
   >
     <div
       class="w-full max-w-md mx-auto mt-24 p-4 bg-white bg-opacity-20 drop-shadow-2xl shadow-2xl backdrop-blur-md drop text-black rounded-2xl flex flex-col items-center"
@@ -49,8 +49,9 @@
         <% let weatherImageMap = { "Clear": "/images/clear.png", "Clouds":
         "/images/clouds.png", "Drizzle": "/images/drizzle.png", "Mist":
         "/images/mist.png", "Rain": "/images/rain.png", "Snow":
-        "/images/snow.png", "Smoke": "/images/co2.png", "Haze":"/images/fog.png"
-        }; let imageSrc = weatherImageMap[weather] || "/images/empty.png"; %>
+        "/images/snow.png", "Smoke": "/images/co2.png",
+        "Haze":"/images/fog.png", "Thunderstorm":"/images/thunder.png" }; let
+        imageSrc = weatherImageMap[weather] || "/images/empty.png"; %>
         <img
           src="<%= imageSrc %>"
           alt="<%= weather || 'Unknown' %>"

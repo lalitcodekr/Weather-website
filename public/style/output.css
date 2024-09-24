@@ -741,6 +741,10 @@ video {
   background-image: url('/images/bgsnow.png');
 }
 
+.bg-\[url\(\'\/images\/bgthunder\.png\'\)\] {
+  background-image: url('/images/bgthunder.png');
+}
+
 .bg-cover {
   background-size: cover;
 }
