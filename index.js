@@ -17,9 +17,6 @@ app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.use(express.static(path.join(__dirname,"public")))
 
-// Access the API key
-const apiKey = process.env.API_KEY;
-
 // Render homepage with default empty values
 app.get("/", (req, res) => {
   res.render("index", { 
@@ -36,6 +33,7 @@ app.get("/", (req, res) => {
 // Handle form submission to get weather data
 app.post("/weather", async (req, res) => {
   const city = req.body.cityName;
+  const apiKey = process.env.API_KEY;
   const apiUrl = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${city}&appid=${apiKey}`;
 
   try {
