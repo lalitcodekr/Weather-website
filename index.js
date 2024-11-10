@@ -1,10 +1,12 @@
 import express from "express";
 import axios from "axios";
 import path from "path";
-import { fileURLToPath } from 'url'; // Needed to simulate __dirname in ES modules
+import { fileURLToPath } from 'url';
+import env from "dotenv";
 
 const app = express();
 const port = 3000;
+env.config();
 
 // Simulating __dirname for ES modules
 const __filename = fileURLToPath(import.meta.url);
@@ -31,7 +33,7 @@ app.get("/", (req, res) => {
 // Handle form submission to get weather data
 app.post("/weather", async (req, res) => {
   const city = req.body.cityName;
-  const apikey = "6dcb4e74c343f8b61abbc3db86da41fa";
+  const apikey = process.env.API_KEY;
   const apiUrl = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${city}&appid=${apikey}`;
 
   try {
