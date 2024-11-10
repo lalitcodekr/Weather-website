@@ -1,32 +1,32 @@
 import express from "express";
 import axios from "axios";
 import path from "path";
-import { fileURLToPath } from 'url';
-import env from "dotenv";
+import { fileURLToPath } from "url";
+import dotenv from "dotenv";
 
 const app = express();
 const port = 3000;
-env.config();
+dotenv.config();
 
 // Simulating __dirname for ES modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-app.set('view engine','ejs')
-app.use(express.json())
-app.use(express.urlencoded({extended:true}))
-app.use(express.static(path.join(__dirname,"public")))
+app.set("view engine", "ejs");
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, "public")));
 
 // Render homepage with default empty values
 app.get("/", (req, res) => {
-  res.render("index", { 
-    city: "", 
-    temperature: "", 
-    description: "", 
-    humidity: "", 
-    windSpeed: "", 
+  res.render("index", {
+    city: "",
+    temperature: "",
+    description: "",
+    humidity: "",
+    windSpeed: "",
     weather: "",
-    error: "" // Default error value to avoid errors in EJS
+    error: "",
   });
 });
 
@@ -45,25 +45,21 @@ app.post("/weather", async (req, res) => {
       description: result.data.weather[0].description,
       humidity: result.data.main.humidity,
       windSpeed: result.data.wind.speed,
-      weather: result.data.weather[0].main, // Ensure weather data is passed
-      error: "" // Clear any existing errors
+      weather: result.data.weather[0].main,
+      error: "",
     });
   } catch (error) {
     // Pass an error message to the view
     res.render("index", {
-      city: "", 
-      temperature: "", 
-      description: "", 
-      humidity: "", 
-      windSpeed: "", 
+      city: "",
+      temperature: "",
+      description: "",
+      humidity: "",
+      windSpeed: "",
       weather: "",
-      error: "Invalid city entered. Please try again." // Error message
+      error: "Invalid city entered. Please try again.",
     });
   }
-});
-
-app.get("/weather", (req, res) => {
-    res.redirect("/");
 });
 
 // Start the server

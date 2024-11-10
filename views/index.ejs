@@ -87,22 +87,6 @@
     </div>
 
     <script>
-      document
-        .querySelector("form")
-        .addEventListener("submit", async (event) => {
-          event.preventDefault(); // Prevent the default form submission
-          const cityName = document.querySelector(
-            'input[name="cityName"]'
-          ).value;
-
-          // Fetch weather data from your backend
-          const response = await fetch(`/weather?city=${cityName}`);
-          const data = await response.json();
-
-          // Handle the response data (update the UI, etc.)
-          console.log(data);
-        });
-
       // Show the weather card when data is available
       window.onload = function () {
         const weatherCard = document.querySelector(".weather");
